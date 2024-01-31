@@ -1,16 +1,15 @@
-function some(array, callback) {
+function mySome(array, callback) {
     for (var i = 0; i < array.length; i++) {
-        if (callback(array[i], i, array)=== true) {
+        if (callback(array[i], i, array)) 
             return true;
         }
+        return false;
     }
-    return false;
-}
-function every(array, callback) {
+    
+function myEvery(array, callback) {
     for(var i = 0; i < array.length; i++) {
-        if (callback(array[i], i, array)=== false) {
-            return false;
+        if (!callback(array[i], i, array)) return false;
         }
+        return true;
     }
-    return true;
-}
+    
